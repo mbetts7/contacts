@@ -1,1 +1,12 @@
-People!
+<h2>All people</h2>
+
+<ol>
+<% @people.each do |person| %>
+  <li>
+    <span><%= person.first_name %></span>
+    <span><%= person.last_name %></span>
+    <span><%= person.email %></span>
+    <span><%= person.phone %></span>
+  </li>  
+<% end %> 
+</ol>
