@@ -3,19 +3,19 @@
 <div class='row'>
   <div class='col-md-3'>
     <div class='btn-group-vertical'>
-      <button 
+      <a href='<%= people_path %>'
         type='button' 
         class='btn btn-default 
           <%= 'btn-primary btn-active' if @email_domain == 'All' %>
           btn-sm'
-        >All</button>
+        >All</a>
       <% @email_domains.each do |domain| %>
-        <button 
+        <a href='<%= people_with_domain_path(domain) %>'
           type='button'
           class='btn btn-default 
           <%= 'btn-primary btn-active' if @email_domain == domain %>
           btn-sm'
-          ><%= domain %></button>
+          ><%= domain %></a>
       <% end %>
     </div>
   </div>
