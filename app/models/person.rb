@@ -1,7 +1,9 @@
 class Person < ActiveRecord::Base
   def self.find_all_with_email_domain domain=nil
     return [] if domain == nil
-    where('email LIKE ?', "%#{domain}%") 
+    return all if domain == 'All'
+
+    where(domain_name: domain)
   end
 
   def self.all_email_domains
