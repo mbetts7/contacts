@@ -3,9 +3,19 @@
 <div class='row'>
   <div class='col-md-3'>
     <div class='btn-group-vertical'>
-      <button type='button' class='btn btn-primary btn-sm active'>All</button>
+      <button 
+        type='button' 
+        class='btn btn-default 
+          <%= 'btn-primary btn-active' if @email_domain == 'All' %>
+          btn-sm'
+        >All</button>
       <% @email_domains.each do |domain| %>
-        <button type='button' class='btn btn-default btn-sm'><%= domain %></button>
+        <button 
+          type='button'
+          class='btn btn-default 
+          <%= 'btn-primary btn-active' if @email_domain == domain %>
+          btn-sm'
+          ><%= domain %></button>
       <% end %>
     </div>
   </div>
